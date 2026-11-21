@@ -40,6 +40,15 @@
         </label>
       </div>
       
+            <div class="flex flex-wrap items-center gap-4">
+        <select id="sort" class="rounded-xl border-2 border-line p-2.5 bg-white">
+          <option value="id|asc">Numéro</option>
+          <option value="name|asc">Nom A → Z</option>
+          <option value="name|desc">Nom Z → A</option>
+        </select>
+        <p id="status" class="text-sm text-muted"></p>
+      </div>
+
       <!-- Filtres dyal Les Types Digimon (Vaccine, Data, Virus) -->
       <div id="filters" role="group" aria-label="Filtrer par type" class="flex h-11 flex-nowrap gap-2 overflow-hidden">
           <button type="button" class="chip bg-ink text-white border-ink shrink-0 px-4 py-2 rounded-full font-bold">Tous</button>
@@ -248,24 +257,7 @@
           <button type="button" class="btn-primary bg-accent text-white font-bold py-3 rounded-xl hover:opacity-90 transition">Ajouter à l'équipe</button>
         </section>
 
-        <!-- ===================== MON ÉQUIPE ===================== -->
-        <section id="team" aria-label="Mon équipe" class="rounded-card bg-white p-6 border border-line shadow-sm flex flex-col gap-4">
-          <div class="flex items-center justify-between">
-            <h2 class="font-display text-2xl font-extrabold">Mon équipe</h2>
-            <span class="font-mono text-sm font-bold bg-brand-light px-3 py-1 rounded-full text-brand-dark"><span id="team-slot-count">0</span>/6</span>
-          </div>
-          
-          <div class="grid grid-cols-3 gap-3">
-            <div class="flex h-20 items-center justify-center rounded-xl border-2 border-dashed border-line bg-ground text-muted font-bold text-sm">Vide</div>
-            <div class="flex h-20 items-center justify-center rounded-xl border-2 border-dashed border-line bg-ground text-muted font-bold text-sm">Vide</div>
-            <div class="flex h-20 items-center justify-center rounded-xl border-2 border-dashed border-line bg-ground text-muted font-bold text-sm">Vide</div>
-            <div class="flex h-20 items-center justify-center rounded-xl border-2 border-dashed border-line bg-ground text-muted font-bold text-sm">Vide</div>
-            <div class="flex h-20 items-center justify-center rounded-xl border-2 border-dashed border-line bg-ground text-muted font-bold text-sm">Vide</div>
-            <div class="flex h-20 items-center justify-center rounded-xl border-2 border-dashed border-line bg-ground text-muted font-bold text-sm">Vide</div>
-          </div>
-          <p class="text-xs text-muted">Vous pouvez ajouter jusqu'à 6 Digimon dans votre équipe.</p>
-        </section>
-
+        
       </aside>
     </div>
 
@@ -277,7 +269,7 @@
       </div>
       <form id="creature-form" novalidate class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
         <label class="flex flex-col gap-1 text-sm font-bold">Numéro
-          <input name="id" type="text" placeholder="#013" class="field font-normal rounded-xl border-2 border-line p-2.5 outline-none focus:border-brand">
+          <input name="number" type="text" placeholder="#013" class="field font-normal rounded-xl border-2 border-line p-2.5 outline-none focus:border-brand">
           <span class="error-message text-sm font-normal text-muted"></span>
         </label>
         <label class="flex flex-col gap-1 text-sm font-bold">Nom
@@ -317,6 +309,7 @@
           <textarea name="description" rows="3" placeholder="10 à 200 caractères" class="rounded-xl border-2 border-line p-3 font-normal outline-none focus:border-brand"></textarea>
           <span class="error-message text-sm font-normal text-muted"></span>
         </label>
+                <p id="form-message" class="md:col-span-2 lg:col-span-4 font-bold"></p>
         <div class="flex flex-wrap justify-end gap-3 md:col-span-2 lg:col-span-4">
           <button type="reset" class="btn-outline border-2 border-line px-6 py-2 rounded-xl font-bold hover:bg-line transition">Effacer</button>
           <button type="submit" class="btn-primary bg-brand text-white px-6 py-2 rounded-xl font-bold hover:bg-brand-dark transition">Ajouter le Digimon</button>

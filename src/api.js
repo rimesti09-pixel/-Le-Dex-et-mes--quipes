@@ -38,7 +38,7 @@ export function getCreatures(params = {}) {
     )
 }
 
- export function getCreatures(id){
+ export function getCreature(id){
     return request("GET",`/creatures/${id}`);
  }
 
